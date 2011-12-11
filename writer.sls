@@ -6,6 +6,8 @@
         pass
         run-writer
         map-writer
+        listens
+        censor
         (rename (pair->writer writer)
                 (writer-output exec-writer))
         make-writer ; seems more useful than writer to me
@@ -52,5 +54,16 @@
 
 (define (map-writer f w)
   (pair->writer (f (run-writer w))))
+
+(define (listens f ma)
+  (let ((result (run-writer ma)))
+    (make-writer (cons (car result)
+                       (f (cdr result)))
+                 (writer-output ma))))
+
+(define (censor f ma)
+  (let ([result (writer-result ma)]
+        [output (writer-output ma)])
+    (make-writer result (f output))))
 
 )
