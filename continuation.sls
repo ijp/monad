@@ -5,6 +5,8 @@
         callcc
         run-cont
         cont
+        map-cont
+        with-cont
         )
 
 (import (rnrs))
@@ -31,4 +33,12 @@
 
 (define (run-cont m k)
   (m k))
+
+(define (map-cont f m)
+  (>>= m (lambda (x) (return (f x)))))
+
+(define (with-cont f m)
+  (lambda (k)
+    (run-cont m (f k))))
+
 )
