@@ -1,4 +1,16 @@
 #!r6rs
+;;; continuation.sls --- Continuation Monad
+
+;; Copyright (C) 2011,2012 Ian Price <ianprice90@googlemail.com>
+
+;; Author: Ian Price <ianprice90@googlemail.com>
+
+;; This program is free software, you can redistribute it and/or
+;; modify it under the terms of the new-style BSD license.
+
+;; You should have received a copy of the BSD license along with this
+;; program. If not, see <http://www.debian.org/misc/bsd.license>.
+
 (library (monad continuation)
 (export >>=
         return

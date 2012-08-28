@@ -1,4 +1,17 @@
 #!r6rs
+;;; reader.sls --- Reader Monad
+
+;; Copyright (C) 2011,2012 Ian Price <ianprice90@googlemail.com>
+
+;; Author: Ian Price <ianprice90@googlemail.com>
+
+;; This program is free software, you can redistribute it and/or
+;; modify it under the terms of the new-style BSD license.
+
+;; You should have received a copy of the BSD license along with this
+;; program. If not, see <http://www.debian.org/misc/bsd.license>.
+
+;;; Commentary:
 ;; Interestingly, return and >>= are basically K and S combinators
 (library (monad reader)
 (export >>=
