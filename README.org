@@ -1,0 +1,5 @@
+* Monads
+
+Various monads I've implemented at one time or another. Utility
+varies.
+Feel free to reuse if you find them useful
