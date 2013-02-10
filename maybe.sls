@@ -37,7 +37,7 @@
         cat-maybes
         )
 (import (rnrs)
-        (monad private plai-records))
+        (ijputils datatypes))
 
 (define-type Maybe
   (just (value (lambda (_) #t)))
